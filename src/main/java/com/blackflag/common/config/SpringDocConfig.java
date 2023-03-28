@@ -50,9 +50,9 @@ public class SpringDocConfig {
     @Bean
     GroupedOpenApi customApi() {
         return GroupedOpenApi.builder()
-                .group("custom-custom-api")
-                .displayName("Custom APIs in Custom")
-                .pathsToMatch("/apiV1/**")
+                .group("community-custom-api")
+                .displayName("Custom APIs in Community")
+                .pathsToMatch("/community/**")
                 .build();
     }
 
@@ -70,7 +70,7 @@ public class SpringDocConfig {
         return GroupedOpenApi.builder()
                 .group("all-api")
                 .displayName("All APIs")
-                .pathsToMatch("/api/**", "/apis/**")
+                .pathsToMatch("/api/**", "/community/**")
                 .build();
     }
 
