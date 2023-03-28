@@ -1,0 +1,49 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 1000
+      min-spare: 30
+  port: 8080
+  servlet:
+    context-path: /platform
+    session:
+      cookie:
+        http-only: true
+
+spring:
+  profiles:
+    active: dev
+
+springdoc:
+  api-docs:
+    #是否开启文档功能
+    enabled: true
+    #swagger后端请求地址
+    path: /api-docs
+  swagger-ui:
+    #自定义swagger前端请求路径，输入http：127.0.0.1:8080/test会自动重定向到swagger页面
+    path: /test
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml,classpath:/META-INF/modeler-mybatis-mappings/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.blackflag.modules.entity
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型
+      id-type: ASSIGN_ID
+    banner: false
+  #原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+  configuration-properties:
+    prefix:
+    blobType: BLOB
+    boolValue: TRUE
