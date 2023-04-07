@@ -33,7 +33,7 @@
 		<knife4j.version>4.1.0</knife4j.version>
 		<hutool.version>5.8.15</hutool.version>
 		<spring-cloud.version>2022.0.1</spring-cloud.version>
-		<spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
+		<spring-cloud-alibaba.version>2022.0.0.0-RC1</spring-cloud-alibaba.version>
 	</properties>
 
 	<dependencies>
@@ -87,7 +87,6 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-
 		<!--SpringCloud依赖配置-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -96,16 +95,17 @@
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.alibaba.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-<!--			<version>${spring-cloud-alibaba.version}</version>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>com.alibaba.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
-<!--			<version>${spring-cloud-alibaba.version}</version>-->
-<!--		</dependency>-->
+		<!-- Nacos -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+			<version>${spring-cloud-alibaba.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<version>${spring-cloud-alibaba.version}</version>
+		</dependency>
 		<!--Hutool Java工具包-->
 		<dependency>
 			<groupId>cn.hutool</groupId>
@@ -122,12 +122,13 @@
 			<artifactId>mybatis-plus-boot-starter</artifactId>
 			<version>${mybatisplus.version}</version>
 		</dependency>
-
+		<!-- knife4j -->
 		<dependency>
 			<groupId>com.github.xiaoymin</groupId>
 			<artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
 			<version>${knife4j.version}</version>
 		</dependency>
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
